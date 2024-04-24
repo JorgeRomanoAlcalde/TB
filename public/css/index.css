@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(29,150,253,1) 45%, rgba(43,25,255,1) 99%);
+    height: 15%;
+    margin: 0;
+}
+
+header a img{
+    height: 130px;
+    margin-left: 20px;
+}
+
+.carrusel{
+    height: 450px;
+    margin: 0;
+}
+
+#contenedorIndex{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contenedorIndex div{
+    display:flex;
+}
+
+#contenedorIndex div button{
+    margin: 40px;
+}
+
+.btn{
+    height: 100px;
+    width: 300px;
+}
