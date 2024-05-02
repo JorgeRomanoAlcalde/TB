@@ -1,8 +1,8 @@
 @extends("master")
-<link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
-<header>
-    <a href="index.blade.php"><img src="{{asset('images\icon.png')}}" alt="Trace Better ICON"></a>
-</header>
+@section('title', 'Inicio')
+
+@section('index')
+<section id="index">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
         <div class="carousel-item active">
@@ -25,8 +25,6 @@
         </a>
     </div>
 
-    
-
     <div id="contenedorIndex">
         <h1>Bienvenido a Trace Better</h1>
         <div>
@@ -41,3 +39,5 @@
             </form>
         </div>
     </div>
+</section>
+@endsection
