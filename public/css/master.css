@@ -1,3 +1,71 @@
-header{
-    background-color: aqua;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*BODY*/
+body{
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+/*HEADER*/
+#cabecera{
+    background-color:#0322d5fb ;
+    height: 15vh;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cabecera a img{
+    height: 130px;
+    margin-left: 20px;
+}
+
+#cabecera div {
+    margin-right: 50px;
+}
+
+#cabecera div nav .enlaceHeader{
+    text-decoration: none;
+    color: white;
+}
+
+#cabecera div nav .enlaceHeader:hover{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+
+/*FOOTER*/
+#pie{
+    background-color:lightgray;
+    height: 20vh;
+    max-width: 100vw;
+}
+
+#pie h1{
+    color: white;
+}
+
+#pie section #menu{
+    display: flex;
+    justify-content: center;
+}
+
+#pie section #menu div{
+    display: flex;
+    flex-direction: column;
+}
+
+#pie section #menu div .enlaceFooter {
+    text-decoration: none;
+    color: black;
+}
+
+#pie h1{
+    color: white;
 }

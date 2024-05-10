@@ -3,18 +3,6 @@
     padding: 0;
 }
 
-#cabecera{
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(29,150,253,1) 45%, rgba(43,25,255,1) 99%);
-    height: 15%;
-    margin: 0;
-}
-
-#cabecera a img{
-    height: 130px;
-    margin-left: 20px;
-}
-
 .carrusel{
     height: 450px;
     margin: 0;
