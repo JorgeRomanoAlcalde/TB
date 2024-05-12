@@ -1,22 +1,17 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+//INDEX
+Route::view('/','index')->name('inicio');
 
+//REGISTRO
+Route::view('/login', "login")->name('login');
+Route::view('/registro',"register")->name('registro');
+Route::view('/menu', "dashboard")->middleware('auth')->name('menu');
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
+//ALIDACIONES,INICIO DE SESIÓN Y CIERRE DE SESIÓN
+Route::view('/validar-registro', [LoginController:: class, 'register'])->name('validar-registro');
+Route::view('/inicia-sesion', [LoginController:: class, 'login'])->name('inicia-sesion');
+Route::view('/logout', [LoginController:: class, 'logout'])->name('logout');
