@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#informacionUsuario{
+    margin-left: 200px;
+}
+
+.botones{
+    padding: 20px;
+    border: black 2px solid;
+    width: 200px;
+    background-color:#0d59ca ;
+    color: white;
+    margin: 20px;
+}
+
+#menubotones{
+    display: flex;
+    flex-direction: column;
+}
+
+#estructura{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+}
+
+.parejasbotones{
+    display: flex;
+}
+
+#botonUnico{
+    display: flex;
+    justify-content: center;
+}
