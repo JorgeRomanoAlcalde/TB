@@ -14,11 +14,11 @@ class WarehouseTableSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('warehouse')->insert([
+        DB::table('warehouses')->insert([
             'seccion' => '1A',
         ]);
 
-        DB::table('warehouse')->insert([
+        DB::table('warehouses')->insert([
             'seccion' => '2A',
         ]);
     }

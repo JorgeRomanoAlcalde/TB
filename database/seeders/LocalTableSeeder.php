@@ -14,7 +14,7 @@ class LocalTableSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('local')->insert([
+        DB::table('locals')->insert([
             'ubicacion' => 'C/Sagitario 4 ',
         ]);
     }

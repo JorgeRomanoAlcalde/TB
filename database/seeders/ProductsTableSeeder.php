@@ -30,7 +30,7 @@ class ProductsTableSeeder extends Seeder
 
         DB::table('products')->insert([
             'nombre' => 'Estrella galicia',
-            'precio' => '2,50',
+            'precio' => '2.50',
             'descripcion' => 'Cerveza Gallega',
             'cantidad' => '86',
         ]);
@@ -44,7 +44,7 @@ class ProductsTableSeeder extends Seeder
 
         DB::table('products')->insert([
             'nombre' => 'Mahou',
-            'precio' => '2,25',
+            'precio' => '2.25',
             'descripcion' => 'Cerveza Madrileña',
             'cantidad' => '15',
         ]);
