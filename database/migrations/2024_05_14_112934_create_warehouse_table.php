@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('warehouse', function (Blueprint $table) {
             $table->id();
+            $table->string('seccion');
             $table->timestamps();
         });
     }
