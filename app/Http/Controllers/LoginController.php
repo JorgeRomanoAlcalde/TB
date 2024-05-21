@@ -39,7 +39,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
                 return redirect(route('menu'));
         }else{
-            return redirect(route('inicio'));
+            return redirect(route('menu'));
         }
     }
 

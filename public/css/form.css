@@ -1,7 +1,28 @@
 .contenedorFormulario{
+    background-color: rgb(231, 231, 231);
+    min-height: 61vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
+    background-color: white;
+    border-radius: 7px;
+    width: 400px;
+}
+
+.formulario img{
+    height: 100px;
+}
+
+button.botonFormulario{
+    padding: 2px;
+    height: 50px;
+    width: 250px;
 }
