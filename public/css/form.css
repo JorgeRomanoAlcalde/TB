@@ -21,6 +21,10 @@
     height: 100px;
 }
 
+.formulario form{
+   padding: 0 0 25px 0;
+}
+
 button.botonFormulario{
     padding: 2px;
     height: 50px;
