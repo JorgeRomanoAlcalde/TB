@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{url('css/show.css')}}">
         <link rel="stylesheet" href="{{url('css/tablas.css')}}">
         <link rel="stylesheet" href="{{url('css/form.css')}}">
+        <link rel="stylesheet" href="{{url('css/textos.css')}}">
         <link rel="stylesheet" href="{{url('bootstrap/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{url('bootstrap/js/bootstrap.min.js')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">

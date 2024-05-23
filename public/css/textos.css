@@ -1,0 +1,13 @@
+.contenedorTexto{
+    display: flex;
+    justify-content: center;
+}
+
+.textos{
+    width: 900px;
+    padding: 50px 0 40px 0;
+}
+
+.textos p{
+    text-align: justify;
+}
