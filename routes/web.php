@@ -28,15 +28,14 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::get('/local', [LocalController::class,'index'])->name('local.index');
 
 //PRODUCT
-Route::get('/products', [ProductController::class,'index'])->name('product.index');
-Route::view('/login/add', "product.form")->name('productForm');
-Route::post('product', [ProductController::class,'store'])->name('product.store');
-Route::patch('product/{product}', 'ProductController@update')->name('product.update');
-Route::get('product/{product}/edit', 'ProductController@edit')->name('product.edit');
+Route::get('/addproductos', [ProductController::class,'viewAdd'])->name('add.productos');
+Route::get('/allproductos', [ProductController::class,'index'])->name('all.productos');
+
+
 Route::delete('product/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 
 //WAREHOUSE
 Route::get('/warehouse', [WarehouseController::class,'index'])->name('warehouse.index');
 
 //USER
-Route::get('/user', [UserController::class,'index'])->name('user.index');
+Route::get('/users', [UserController::class,'index'])->name('all.users');

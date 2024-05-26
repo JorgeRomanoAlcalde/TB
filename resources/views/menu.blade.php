@@ -13,31 +13,31 @@
                     <input type="submit" value="Añadir asalariados" class="botones">
                 </form>
     
-                <form action="´{{route('user.index')}}" method="GET" class="centrado">
+                <form action="{{route('all.users')}}" method="GET" class="centrado">
                     @csrf
                     <input type="submit" value="Editar asalariados" class="botones">
                 </form>
             </div>
             
             <div class="parejasbotones">
-                <form action="{{route('product.store')}}" method="GET" class="centrado">
+                <form action="{{route('add.productos')}}" method="POST" class="centrado">
                     @csrf
                     <input type="submit" value="Añadir productos" class="botones">
                 </form>
     
-                <form action="{{route('product.index')}}" method="GET" class="centrado">
+                <form action="{{route('all.productos')}}" method="GET" class="centrado">
                     @csrf
                     <input type="submit" value="Editar productos" class="botones">
                 </form>
             </div>
 
             <div class="parejasbotones">
-                <form action="{{route('local.index')}}" method="GET" class="centrado">
+                <form action="" method="GET" class="centrado">
                     @csrf
                     <input type="submit" value="Gestionar local" class="botones">
                 </form>
     
-                <form action="{{route('warehouse.index')}}" method="GET" class="centrado">
+                <form action="" method="GET" class="centrado">
                     @csrf
                     <input type="submit" value="Gestionar almacen" class="botones">
                 </form>

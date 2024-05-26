@@ -1,38 +1,42 @@
 @extends('master')
 @section('index')
-    <section class="contenedorTabla">
-        <table class='sinbordes tabla'>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Descripcion</th>
-                <th>Cantidad</th>
-                <th class='sinbordes'></th>
-                <th class='sinbordes'></th>
-            </tr>
-            @foreach ($productList as $product)
-                <tr>
-                    <td class="conborde">{{ $product->id }}</td>
-                    <td class="conborde">{{ $product->nombre }}</td>
-                    <td class="conborde">{{ $product->precio }}</td>
-                    <td class="conborde">{{ $product->descripcion }}</td>
-                    <td class="conborde">{{ $product->cantidad }}</td>
-                    <td class='sinbordes centrado'>
-                        <a href="">Modificar</a>
-                    </td>
-                    <td class='sinbordes'>
-                        <form action ="{{ route('product.destroy', $product->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Borrar">
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </table><br>
-        <a href="{{ route('productForm') }}">Nuevo artículo</a>
-
+    <section class="contenedorTablas">
+        <section class="tablaSection">
+            <table class='tabla table table-bordered table-hover'>
+                <thead>
+                    <tr>
+                        <th class="table-primary">ID</th>
+                        <th class="table-primary">Nombre</th>
+                        <th class="table-primary">Precio</th>
+                        <th class="table-primary">Descripcion</th>
+                        <th class="table-primary">Cantidad</th>
+                        <th class="table-primary centrado">Modificar / Borrar</th>
+                    </tr>
+                </thead>
+                @foreach ($productList as $product)
+                    <tr>
+                        <td>{{ $product->id }}</td>
+                        <td>{{ $product->nombre }}</td>
+                        <td>{{ $product->precio }}</td>
+                        <td>{{ $product->descripcion }}</td>
+                        <td>{{ $product->cantidad }}</td>
+                        <td class='centrado'>
+                            <form action ="{{ route('product.destroy', $product->id) }}" method="POST">
+                                @csrf
+                                <input type="submit" class="btn btn-primary botonTabla" value="Modificar">
+                            </form>
+                            <form action ="{{ route('product.destroy', $product->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="botonTabla btn btn-primary" value="Borrar">
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+        </section>
+        <br>
+        <a href="{{ route('add.productos') }}">Nuevo artículo</a>
         <br><br>
         <form action="{{ route('menu') }}" method="GET" class="centrado">
             @csrf
@@ -40,4 +44,3 @@
         </form>
     </section>
 @endsection
-

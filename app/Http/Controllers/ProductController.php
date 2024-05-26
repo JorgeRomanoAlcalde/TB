@@ -18,6 +18,10 @@ class ProductController extends Controller
         return view('product.form', array('products' => $products));
     }
 
+    public function viewAdd() {
+        return view('product.form');
+    }
+
     public function store(Request $r) {
         $p = new Product();
         $p->nombre=$r->nombre;
@@ -25,8 +29,14 @@ class ProductController extends Controller
         $p->descripcion=$r->descripcion;
         $p->cantidad=$r->cantidad;
 
-        $p->save();
-        return redirect()->route('product.index');
+        $control = false;
+
+        if( $p->save()){
+            $control=true;
+            return $control;
+        }else{
+            return $control;
+        }
     }
 
     public function update($id, Request $r) {

@@ -1,34 +1,38 @@
 @extends('master')
 @section('index')
-    <section class="contenedorTabla">
-        <table class='sinbordes tabla'>
-            <tr>
-                <th>ID</th>
-                <th>Nickname</th>
-                <th>Email</th>
-                <th class='sinbordes'></th>
-                <th class='sinbordes'></th>
-            </tr>
-            @foreach ($userList as $user)
-                <tr>
-                    <td class="conborde">{{ $user->id }}</td>
-                    <td class="conborde">{{ $user->nickname }}</td>
-                    <td class="conborde">{{ $user->email }}</td>
-                    <td class='sinbordes centrado'>
-                        <a href="">Modificar</a>
-                    </td>
-                    <td class='sinbordes'>
-                        <form action = "" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Borrar">
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </table><br>
-        <a href="">Nuevo artículo</a>
-
+    <section class="contenedorTablas">
+        <section class="tablaSection">
+            <table class='tabla table table-bordered table-hover'>
+                <thead>
+                    <tr>
+                        <th class="table-primary">ID</th>
+                        <th class="table-primary">Nickname</th>
+                        <th class="table-primary">Email</th>
+                        <th class="table-primary centrado">Modificar / Borrar</th>
+                    </tr>
+                </thead>
+                @foreach ($userList as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->nickname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td class='centrado'>
+                            <form action ="" method="POST">
+                                @csrf
+                                <input type="submit" class="btn btn-primary botonTabla" value="Modificar">
+                            </form>
+                            <form action ="" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="botonTabla btn btn-primary" value="Borrar">
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+        </section>
+        <br>
+        <a href="{{ route('add.productos') }}">Nuevo artículo</a>
         <br><br>
         <form action="{{ route('menu') }}" method="GET" class="centrado">
             @csrf

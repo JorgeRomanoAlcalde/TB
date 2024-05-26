@@ -1,37 +1,30 @@
 @extends('master')
 @section('index')
     <section class="contenedorFormulario">
-                <form action="{{ route('product.store') }}" method="POST">
+        <div class="formulario">
+            <h1>Añade productos</h1>
+            <form method="POST" action="{{ route('validar-registro') }}">
                 @csrf
-                <br>
-                <table class='sinbordes'>
-                    <tr>
-                        <td class='sinbordes'>Nombre del producto:</td>
-                        <td class='sinbordes'><input type="text" name="name" required></td>
-                    </tr>
-                    <tr>
-                        <td class='sinbordes'>Precio:</td>
-                        <td class='sinbordes'><input type="text" name="description" required></td>
-                    </tr>
-                    <tr>
-                        <td class='sinbordes'>Descripción:</td>
-                        <td class='sinbordes'><input type="text" name="price" required></td>
-                    </tr>
-                    <tr>
-                        <td class='sinbordes'>Stock:</td>
-                        <td class='sinbordes'><input type="text" name="stock" required></td>
-                    </tr>
-                    <tr>
-                        <td class='sinbordes'><a href="{{ route('product.index') }}">Volver al listado</a></td>
-                        <td class='sinbordes'><input type="submit"></td>
-                    </tr>
-                </table>
+                <div class="form-group">
+                    <label for="nombre">Nombre del producto</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control"
+                        placeholder="Introduzca el nombre del producto" required>
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio" id="precio" class="form-control"
+                        placeholder="Introduzca el precio" step="0.01" required min="0">
+                    <label for="descripcion">Descripción</label>
+                    <textarea rows="3" name="descripcion" id="descripcion" class="form-control"
+                        placeholder="Introduzca un descripción del producto"></textarea>
+                    <div class="form-group" style="margin-bottom: 20px">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" id="cantidad" class="form-control"
+                            placeholder="Introduzca una cantidad" required min="0">
+                        <small id="emailHelp" class="form-text text-muted">Número de unidades en stock</small>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary botonFormulario">Añadir producto</button>
+                <p><a href="{{ route('all.productos') }}">Ver listado de productos</a></p>
             </form>
-
-            <br><br>
-            <form action = "{{ route('menu') }}" method="GET" class="centrado">
-                @csrf
-                <input type="submit" value="MENÚ PRINCIPAL">
-            </form>
+        </div>
     </section>
 @endsection
