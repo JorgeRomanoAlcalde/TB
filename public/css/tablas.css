@@ -1,9 +1,11 @@
+/* TABLA */
 .contenedorTablas{
     margin-top: 40px;
     min-height: 60vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .tablaSection{
@@ -12,10 +14,10 @@
     width: 1300px;
 }
 
-input.botonTabla{
+button.botonTabla{
         padding: 2px;
         height: 50px;
-        width: 100px;
+        width: 120px;
         margin: 0px;
 }
 
@@ -35,4 +37,28 @@ input.botonTabla{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+/* CONTENEDOR OPCIONES*/
+.opcionesContenedor{
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    position: sticky;
+}
+
+.opcionesContenedor a{
+    width: 200px;
+    height: 40px;
+    margin: 10px 0 10px 0;
+}
+
+.iconos{
+    height: 25px;
+    padding-bottom: 3px;
+    margin-right: 5px;
+
 }

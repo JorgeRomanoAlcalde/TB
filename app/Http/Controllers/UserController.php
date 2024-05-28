@@ -11,4 +11,8 @@ class UserController extends Controller
         $userList = User::all();
         return view('user.all', ['userList'=>$userList]);
     }
+
+    public function viewAdd() {
+        return view('user.form');
+    }
 }

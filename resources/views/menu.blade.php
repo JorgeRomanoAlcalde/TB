@@ -8,7 +8,7 @@
         </div>
         <div id="menubotones">
             <div class="parejasbotones">
-                <form action ="" method="GET" class="centrado">
+                <form action ="{{route('add.users')}}" method="GET" class="centrado">
                     @csrf
                     <input type="submit" value="Añadir asalariados" class="botones">
                 </form>
@@ -22,12 +22,12 @@
             <div class="parejasbotones">
                 <form action="{{route('add.productos')}}" method="POST" class="centrado">
                     @csrf
-                    <input type="submit" value="Añadir productos" class="botones">
+                    <button type="submit" class="btn btn-primary botonTabla"><img src="{{ asset('images\icons\add.png') }}" alt="icono borrar" class="iconos">Añadir productos</button>
                 </form>
     
                 <form action="{{route('all.productos')}}" method="GET" class="centrado">
                     @csrf
-                    <input type="submit" value="Editar productos" class="botones">
+                    <button type="submit" class="btn btn-primary botonTabla"><img src="{{ asset('images\icons\edit.png') }}" alt="icono borrar" class="iconos">Editar productos</button>
                 </form>
             </div>
 
@@ -37,7 +37,7 @@
                     <input type="submit" value="Gestionar local" class="botones">
                 </form>
     
-                <form action="" method="GET" class="centrado">
+                <form action="{{route('all.warehouse')}}" method="GET" class="centrado">
                     @csrf
                     <input type="submit" value="Gestionar almacen" class="botones">
                 </form>
