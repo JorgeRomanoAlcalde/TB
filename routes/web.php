@@ -28,14 +28,16 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::get('/local', [LocalController::class,'index'])->name('local.index');
 
 //PRODUCT
-Route::get('/addproductos', [ProductController::class,'viewAdd'])->name('add.productos');
-Route::get('/allproductos', [ProductController::class,'index'])->name('all.productos');
+Route::get('/addProductos', [ProductController::class,'viewAdd'])->name('add.productos');
+Route::get('/allProductos', [ProductController::class,'index'])->name('all.productos');
 
 
 Route::delete('product/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 
 //WAREHOUSE
-Route::get('/warehouse', [WarehouseController::class,'index'])->name('warehouse.index');
+Route::get('/warehouse', [WarehouseController::class,'index'])->name('all.warehouse');
+Route::get('/addWarehouse', [WarehouseController::class,'viewAdd'])->name('add.warehouse');
 
 //USER
 Route::get('/users', [UserController::class,'index'])->name('all.users');
+Route::get('/addUsers', [UserController::class,'viewAdd'])->name('add.users');

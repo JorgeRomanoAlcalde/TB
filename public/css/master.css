@@ -42,6 +42,12 @@ body{
     font-weight: bolder;
 }
 
+#cabecera .enlaceHeader .iconos{
+    height: 25px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
 
 /*FOOTER*/
 #pie{

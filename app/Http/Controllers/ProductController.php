@@ -47,12 +47,12 @@ class ProductController extends Controller
         $p->cantidad = $r->cantidad;
 
         $p->save();
-        return redirect()->route('product.index');
+        return redirect()->route('all.productos');
     }
 
     public function destroy($id) {
         $p = Product::find($id);
         $p->delete();
-        return redirect()->route('product.index');
+        return redirect()->route('all.productos');
     }
 }
