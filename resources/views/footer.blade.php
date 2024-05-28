@@ -8,8 +8,8 @@
             </div>
             <div>
                 <h2>Información legal</h2>
-                <a href="#" class="enlaceFooter">Política de privacidad</a>
-                <a href="#" class="enlaceFooter">Política de cookies</a>
+                <a href="{{route('privacidad')}}" class="enlaceFooter">Política de privacidad</a>
+                <a href="{{route('cookies')}}" class="enlaceFooter">Política de cookies</a>
             </div>
             <div>
                 <h2>Redes sociales</h1>

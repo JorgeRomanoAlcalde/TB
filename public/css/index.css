@@ -12,6 +12,7 @@
     display:flex;
     align-items: center;
     flex-direction: column;
+    margin: 40px 250px 40px 250px;
 }
 
 #contenedorIndex div{
@@ -25,4 +26,13 @@
 .btn{
     height: 100px;
     width: 300px;
+}
+
+#titulo{
+    color:#0d59ca;
+}
+
+.parrafo{
+    font-size: large;
+    text-align: justify;
 }
