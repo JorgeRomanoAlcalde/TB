@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Warehouse;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,12 +15,8 @@ class ProductController extends Controller
     }
 
     public function create() {
-        $products = Product::all();
-        return view('product.form', array('products' => $products));
-    }
-
-    public function viewAdd() {
-        return view('product.form');
+        $warehouses = Warehouse::all();
+        return view('product.form', array('warehouses' => $warehouses));
     }
 
     public function store(Request $r) {
@@ -29,14 +26,14 @@ class ProductController extends Controller
         $p->descripcion=$r->descripcion;
         $p->cantidad=$r->cantidad;
 
-        $control = false;
+        $p->save();
+        return redirect()->route('all.productos');
+    }
 
-        if( $p->save()){
-            $control=true;
-            return $control;
-        }else{
-            return $control;
-        }
+    public function edit($id) {
+        $producto = Product::find($id);
+        $warehouses = Warehouse::all();
+        return view('product.form', array('producto' => $producto, 'warehouses' => $warehouses));
     }
 
     public function update($id, Request $r) {
@@ -44,6 +41,7 @@ class ProductController extends Controller
         $p->nombre = $r->nombre;
         $p->precio = $r->precio;
         $p->descripcion = $r->descripcion;
+        $p->warehouse_id= $r->warehouse;
         $p->cantidad = $r->cantidad;
 
         $p->save();

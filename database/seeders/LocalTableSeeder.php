@@ -15,7 +15,10 @@ class LocalTableSeeder extends Seeder
     {
         //
         DB::table('locals')->insert([
+            'nombre' => 'La Taberna del Blues',
             'ubicacion' => 'C/Sagitario 4 ',
+            'telefono' => '627632863',
+            'horario' => '21',
         ]);
     }
 }

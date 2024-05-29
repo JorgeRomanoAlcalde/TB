@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Inicio de sesión')
 @section('index')
     <section class="contenedorFormulario">
         <div class="formulario">

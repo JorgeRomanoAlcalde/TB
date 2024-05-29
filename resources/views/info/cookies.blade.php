@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Política de cookies')
 @section('index')
     <section class="contenedorTexto">
         <section class="textos">

@@ -9,10 +9,10 @@
             <img class="d-block w-100 carrusel" src="{{asset('images\carrousel ejemplo.png')}}" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100 carrusel" src="" alt="Second slide">
+            <img class="d-block w-100 carrusel" src="{{asset('images\carrousel2.jpg')}}" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100 carrusel" src="" alt="Third slide">
+            <img class="d-block w-100 carrusel" src="{{asset('images\carrousel3.jpg')}}" alt="Third slide">
         </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

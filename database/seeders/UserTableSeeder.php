@@ -16,7 +16,11 @@ class UserTableSeeder extends Seeder
         //
         DB::table('users')->insert([
             'nickname' => 'root',
+            'nombre' => 'root',
+            'apellidos' => 'root',
             'email' => 'root@root.com',
+            'telefono' => '123456789',
+            'admin' => '1',
             'password' => 'root',
         ]);
     }

@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Poítica de privacidad')
 @section('index')
     <section class="contenedorTexto">
         <section class="textos">

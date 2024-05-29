@@ -62,3 +62,10 @@ button.botonTabla{
     margin-right: 5px;
 
 }
+
+button.botonFormulario .iconos{
+    height: 25px;
+    padding-bottom: 3px;
+    margin-right: 5px;
+
+}

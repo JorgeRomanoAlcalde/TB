@@ -3,11 +3,15 @@
     padding: 0;
 }
 
+.menuPrincipal{
+    min-height: 61vh;
+}
+
 #informacionUsuario{
     margin-left: 200px;
 }
 
-.botones{
+.botonMenu{
     padding: 20px;
     border: black 2px solid;
     width: 200px;
@@ -25,6 +29,7 @@
     display: flex;
     justify-content: space-between;
     margin-right: 200px;
+    padding-bottom: 50px;
 }
 
 .parejasbotones{

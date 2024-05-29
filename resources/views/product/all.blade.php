@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Productos')
 @section('index')
     <section class="contenedorTablas">
         <!-- TABLA -->
@@ -22,7 +23,7 @@
                         <td>{{ $product->descripcion }}</td>
                         <td>{{ $product->cantidad }}</td>
                         <td class='centrado'>
-                            <form action ="{{ route('product.destroy', $product->id) }}" method="POST">
+                            <form action ="{{ route('edit.productos', $product->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-primary botonTabla"><img src="{{asset('images\icons\edit.png') }}" alt="icono borrar" class="iconos">Modificar</button>
                             </form>

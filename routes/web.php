@@ -28,16 +28,25 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::get('/local', [LocalController::class,'index'])->name('local.index');
 
 //PRODUCT
-Route::get('/addProductos', [ProductController::class,'viewAdd'])->name('add.productos');
 Route::get('/allProductos', [ProductController::class,'index'])->name('all.productos');
-
-
+Route::get('/addProductos', [ProductController::class,'create'])->name('add.productos');
+Route::post('product/', [ProductController::class,'store'])->name('store.productos');
+Route::post('product/{product}/edit', [ProductController::class,'edit'])->name('edit.productos');
+Route::patch('product/{product?}', [ProductController::class,'update'])->name('update.productos');
 Route::delete('product/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 
 //WAREHOUSE
 Route::get('/warehouse', [WarehouseController::class,'index'])->name('all.warehouse');
 Route::get('/addWarehouse', [WarehouseController::class,'viewAdd'])->name('add.warehouse');
+Route::post('warehouse/', [WarehouseController::class,'store'])->name('store.warehouse');
+Route::post('warehouse/{warehouse}/edit', [WarehouseController::class,'edit'])->name('edit.warehouse');
+Route::patch('warehouse/{warehouse?}', [WarehouseController::class,'update'])->name('update.warehouse');
+Route::delete('warehouse/{warehouse}', [WarehouseController::class,'destroy'])->name('destroy.warehouse');
 
 //USER
 Route::get('/users', [UserController::class,'index'])->name('all.users');
-Route::get('/addUsers', [UserController::class,'viewAdd'])->name('add.users');
+Route::get('/addUsers', [UserController::class,'create'])->name('add.users');
+Route::post('users/', [UserController::class,'store'])->name('store.users');
+Route::post('users/{user}/edit', [UserController::class,'edit'])->name('edit.users');
+Route::patch('users/{user?}', [UserController::class,'update'])->name('update.users');
+Route::delete('users/{user}', [UserController::class,'destroy'])->name('destroy.users');

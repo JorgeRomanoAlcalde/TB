@@ -31,3 +31,7 @@ button.botonFormulario{
     height: 50px;
     width: 250px;
 }
+
+input.form-control{
+    margin-bottom: 15px;
+}
