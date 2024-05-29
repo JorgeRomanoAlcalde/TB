@@ -50,3 +50,6 @@ Route::post('users/', [UserController::class,'store'])->name('store.users');
 Route::post('users/{user}/edit', [UserController::class,'edit'])->name('edit.users');
 Route::patch('users/{user?}', [UserController::class,'update'])->name('update.users');
 Route::delete('users/{user}', [UserController::class,'destroy'])->name('destroy.users');
+
+//PERFIL DE USUARIO
+Route::view('userProfile','user')->name('perfil');

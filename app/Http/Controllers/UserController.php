@@ -56,4 +56,9 @@ class UserController extends Controller
         $u->delete();
         return redirect()->route('all.users');
     }
+
+    public function editProfile($id) {
+        $user = User::find($id);
+        return view('user.form', array('user' => $user));
+    }
 }
