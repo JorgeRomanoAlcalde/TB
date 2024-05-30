@@ -30,7 +30,7 @@
         </a>
       </div>
 
-    <div id="contenedorIndex">
+    <div class="contenedorIndex" >
         <h1 id="titulo">El software de gestión sencillo y fiable</h1>
         <p class="parrafo">Trace Better busca facilitar el trabajo tanto de camareros a la hora del servicio como de los dueños o administradores de los locales para tener un historial
             de los movimientos en su local.  La aplicación estará apoyada de una interfaz sencilla y una usabilidad intuitiva con la que se conseguirá agilizar y facilitar
@@ -39,6 +39,14 @@
         <p class="parrafo">Con todas estas cualidades lo que se busca es atraer usuarios tanto veteranos en el sector, como nuevos con el fin de darles una experiencia
             más sencilla y que no dependa de dispositivos TPV como la gran mayoría de gestores de hostelería del mercado actual.
         </p>
+    </div>
+
+    <div class="contenedorIndex" id="gris">
+        <h1 id="titulo">Ventajas de TRACE BETTER</h1>
+        <p class="parrafo">Con Trrace Better podras sacar el maximo partido a tu local de restauración gracias a sus ventajas frente a sus competidores en el mercado. Se trata de un 
+            software que facilita su uso a nuevos usuarios gracias a su rapidez, manejo intuitivo, sencillez visual y su eficiencia al tratar la información.
+        </p><br>
+        <img src="{{asset('images/esquema.png')}}" alt="imagen esquema ventajas" id="esquema">
     </div>
 </section>
 @endsection

@@ -11,14 +11,15 @@ class PedidosController extends Controller
 
     public function index() {
         $productList = Product::all();
-        return view('pedidos', ['productList'=>$productList]);
+        $carrito = array();
+        return view('pedidos',['carrito'=>$carrito,'productList'=>$productList]);
     }
 
-    public function add($id) {
+    public function add($id, $carrito) {
         $product = Product::find($id);
         $productList = Product::all();
-        $carrito = array();
+        $carrito= unserialize($carrito);
         array_push($carrito,$product);
-        return view('pedidos', array('carrito' => $carrito),['productList'=>$productList]);
+        return view('pedidos',['carrito'=>$carrito ,'productList'=>$productList]);
     }
 }

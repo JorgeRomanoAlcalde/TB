@@ -69,7 +69,7 @@
                     <tr>
                     @foreach (range(1, $columnas) as $columna) 
                         @if ($contador < $total_numeros)
-                            <td><form action="{{ route('add.pedidos', $productList[$contador]->id)}}" method="POST">
+                            <td><form  action="{{ route('add.pedidos', [$productList($contador), $carrito]) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-primary ">{{$productList[$contador]->nombre}}</button>
                             </form></td>
