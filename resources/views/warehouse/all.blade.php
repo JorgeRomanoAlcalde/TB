@@ -1,6 +1,9 @@
 @extends('master')
 @section('title', 'Almacenes')
 @section('index')
+    <section class="titulos">
+        <h1>Almacenes</h1>
+    </section>
     <section class="contenedorTablas">
         <section class="tablaSection">
             <table class='tabla table table-bordered table-hover'>

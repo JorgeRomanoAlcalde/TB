@@ -19,6 +19,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '3.50',
             'descripcion' => 'Cerveza Artesana',
             'cantidad' => '35',
+            'warehouse' => '1A - Principal',
         ]);
 
         DB::table('products')->insert([
@@ -26,6 +27,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '2.00',
             'descripcion' => 'Cerveza Aragonesa',
             'cantidad' => '100',
+            'warehouse' => '1A - Principal',
         ]);
 
         DB::table('products')->insert([
@@ -33,6 +35,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '2.50',
             'descripcion' => 'Cerveza Gallega',
             'cantidad' => '86',
+            'warehouse' => '1A - Principal',
         ]);
 
         DB::table('products')->insert([
@@ -40,6 +43,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '2.00',
             'descripcion' => 'Cerveza Burgalesa',
             'cantidad' => '150',
+            'warehouse' => '1A - Principal',
         ]);
 
         DB::table('products')->insert([
@@ -47,13 +51,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '2.25',
             'descripcion' => 'Cerveza Madrileña',
             'cantidad' => '15',
-        ]);
-        
-        DB::table('products')->insert([
-            'nombre' => 'Punk ipa',
-            'precio' => '4.25',
-            'descripcion' => 'Cerveza de importación',
-            'cantidad' => '15',
+            'warehouse' => '1A - Principal',
         ]);
 
         DB::table('products')->insert([
@@ -61,6 +59,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '2.75',
             'descripcion' => 'Cerveza Granadina',
             'cantidad' => '15',
+            'warehouse' => '1A - Principal',
         ]);
 
         DB::table('products')->insert([
@@ -68,6 +67,7 @@ class ProductsTableSeeder extends Seeder
             'precio' => '2.25',
             'descripcion' => 'Refresco de cola',
             'cantidad' => '15',
+            'warehouse' => '2A - Auxiliar',
         ]);
 
     }

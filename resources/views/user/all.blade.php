@@ -1,22 +1,29 @@
 @extends('master')
 @section('title', 'Usuarios')
 @section('index')
+    <section class="titulos">
+        <h1>Usuarios</h1>
+    </section>
     <section class="contenedorTablas">
         <section class="tablaSection">
             <table class='tabla table table-bordered table-hover'>
                 <thead>
                     <tr>
-                        <th class="table-primary">ID</th>
                         <th class="table-primary">Nombre de usuario</th>
+                        <th class="table-primary">Nombre</th>
+                        <th class="table-primary">Apellidos</th>
                         <th class="table-primary">Email</th>
+                        <th class="table-primary">Teléfono</th>
                         <th class="table-primary centrado">Modificar / Borrar</th>
                     </tr>
                 </thead>
                 @foreach ($userList as $user)
                     <tr>
-                        <td>#{{ $user->id }}</td>
-                        <td>{{ $user->nickname }}</td>
+                        <td>{{ $user->nickname}}</td>
+                        <td>{{ $user->nombre }}</td>
+                        <td>{{ $user->apellidos }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->telefono }}</td>
                         <td class='centrado'>
                             <form action ="{{route('edit.users', $user->id)}}" method="POST">
                                 @csrf

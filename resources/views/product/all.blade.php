@@ -1,6 +1,9 @@
 @extends('master')
 @section('title', 'Productos')
 @section('index')
+    <section class="titulos">
+        <h1>Productos</h1>
+    </section>
     <section class="contenedorTablas">
         <!-- TABLA -->
         <section class="tablaSection">
@@ -12,6 +15,7 @@
                         <th class="table-primary">Precio</th>
                         <th class="table-primary">Descripcion</th>
                         <th class="table-primary">Cantidad</th>
+                        <th class="table-primary">Almacén</th>
                         <th class="table-primary centrado">Modificar / Borrar</th>
                     </tr>
                 </thead>
@@ -22,6 +26,7 @@
                         <td>{{ $product->precio }}</td>
                         <td>{{ $product->descripcion }}</td>
                         <td>{{ $product->cantidad }}</td>
+                        <td>{{ $product->warehouse}}</td>
                         <td class='centrado'>
                             <form action ="{{ route('edit.productos', $product->id) }}" method="POST">
                                 @csrf

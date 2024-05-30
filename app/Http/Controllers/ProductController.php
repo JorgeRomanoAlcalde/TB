@@ -25,6 +25,7 @@ class ProductController extends Controller
         $p->precio=$r->precio;
         $p->descripcion=$r->descripcion;
         $p->cantidad=$r->cantidad;
+        $p->warehouse=$r->warehouse;
 
         $p->save();
         return redirect()->route('all.productos');

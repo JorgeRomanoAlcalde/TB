@@ -17,7 +17,7 @@ return new class extends Migration
             $table->double('precio');
             $table->string('descripcion');
             $table->integer('cantidad');
-            $table->bigInteger('warehouse_id')->nullable();
+            $table->string('warehouse')->nullable();
             $table->timestamps();
         });
     }

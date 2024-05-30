@@ -27,6 +27,8 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 //LOCAL
 Route::get('/local', [LocalController::class,'index'])->name('local.index');
+Route::post('local/{local}/edit', [LocalController::class,'edit'])->name('edit.local');
+Route::patch('local/{local?}', [LocalController::class,'update'])->name('update.local');
 
 //PRODUCT
 Route::get('/allProductos', [ProductController::class,'index'])->name('all.productos');

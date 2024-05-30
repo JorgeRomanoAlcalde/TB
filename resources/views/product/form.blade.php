@@ -36,7 +36,7 @@
                         <label for="warehouse">Elija el almacen</label>
                         <select class="form-select" name="warehouse">
                             @foreach ($warehouses as $warehouse)
-                                <option value="{{ $warehouse->id }}" @if ($warehouse->id == ($product->warehouse_id ?? '')) selected @endif>
+                                <option value="{{ $warehouse->seccion }} - {{ $warehouse->nombre }}" @if ($warehouse->id == ($product->warehouse ?? '')) selected @endif>
                                     {{ $warehouse->seccion }} - {{ $warehouse->nombre }}</option>
                             @endforeach
                         </select>

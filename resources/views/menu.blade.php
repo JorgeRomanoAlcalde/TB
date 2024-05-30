@@ -2,12 +2,26 @@
 @section('title', 'Menu')
 @section('index')
     <section class="menuPrincipal">
-        <h2>Bienvenido al menu de usuario </h2>
-        <p>Desde esta pestaña podras gestionar toda la información de tu local y asalariados, además de la toma de pedidos a
-            clientes</p>
+        <div id="bienvenida">
+            <h2>Bienvenido al menu de usuario </h2>
+            <p>Desde esta pestaña podras gestionar toda la información de su local, asalariados y existencias, además de la toma de pedidos a clientes.</p>
+        </div>
         <div id="estructura">
-            <div id="informacionUsuario">
-                <h1>Información del usuario</h1>
+            <div class="informacionUsuario">
+                <div>
+                    <h1>Información de usuario <img src="{{ asset('images\icons\perfilAzul.png') }}" alt="icono perfil" class="iconos" style="height: 35px"></h1>
+                    <p><b>Nombre de usuario:</b> @auth{{ Auth::user()->nickname }}@endauth
+                    </p>
+                    <p><b>Nombre:</b> @auth{{ Auth::user()->nombre }}@endauth
+                    </p>
+                    <p><b>Apellidos:</b> @auth{{ Auth::user()->apellidos }}@endauth
+                    </p>
+                    @if (Auth::user()->admin == 0)
+                        <p><b>Rol:</b> Asalariado</p>
+                    @else
+                        <p><b>Rol:</b> Administrador</p> 
+                    @endif
+                </div>
             </div>
             <div id="menubotones">
                 <div class="parejasbotones">

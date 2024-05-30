@@ -16,9 +16,9 @@ class LocalTableSeeder extends Seeder
         //
         DB::table('locals')->insert([
             'nombre' => 'La Taberna del Blues',
-            'ubicacion' => 'C/Sagitario 4 ',
+            'ubicacion' => 'C. de Juan José Lorente, 28, 50005 Zaragoza',
             'telefono' => '627632863',
-            'horario' => '21',
+            'horario' => '19:00 - 03:00',
         ]);
     }
 }
