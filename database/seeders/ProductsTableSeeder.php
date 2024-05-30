@@ -49,6 +49,26 @@ class ProductsTableSeeder extends Seeder
             'cantidad' => '15',
         ]);
         
+        DB::table('products')->insert([
+            'nombre' => 'Punk ipa',
+            'precio' => '4.25',
+            'descripcion' => 'Cerveza de importación',
+            'cantidad' => '15',
+        ]);
+
+        DB::table('products')->insert([
+            'nombre' => 'Alambra',
+            'precio' => '2.75',
+            'descripcion' => 'Cerveza Granadina',
+            'cantidad' => '15',
+        ]);
+
+        DB::table('products')->insert([
+            'nombre' => 'Coca Cola',
+            'precio' => '2.25',
+            'descripcion' => 'Refresco de cola',
+            'cantidad' => '15',
+        ]);
 
     }
 }

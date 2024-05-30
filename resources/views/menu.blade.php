@@ -52,7 +52,7 @@
                     </form>
                 </div>
 
-                <form action="" method="GET" id="botonUnico">
+                <form action="{{route('pedidos')}}" method="GET" id="botonUnico">
                     @csrf
                     <button type="submit" class="btn btn-primary botonMenu"><img src="{{ asset('images\icons\order.png') }}"
                             alt="icono borrar" class="iconos">Tomar pedido</button>

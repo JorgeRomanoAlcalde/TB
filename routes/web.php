@@ -5,6 +5,7 @@ use App\Http\Controllers\LocalController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PedidosController;
 use Illuminate\Support\Facades\Route;
 
 //INDEX
@@ -53,3 +54,7 @@ Route::delete('users/{user}', [UserController::class,'destroy'])->name('destroy.
 
 //PERFIL DE USUARIO
 Route::view('userProfile','user')->name('perfil');
+
+//PEDIDOS
+Route::get('Order',[PedidosController::class,'index'])->name('pedidos');
+Route::post('Order/{id}', [PedidosController::class,'add'])->name('add.pedidos');

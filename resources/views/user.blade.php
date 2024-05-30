@@ -12,8 +12,11 @@
             </p>
             <p><b>Telefono:</b> @auth{{ Auth::user()->telefono }}@endauth
             </p>
-            <p><b>Rol:</b> @auth{{ Auth::user()->admin }}@endauth
-            </p>
+            @if (Auth::user()->admin == 0)
+                <p><b>Rol:</b> Asalariado</p>
+            @else
+                <p><b>Rol:</b> Administrador</p> 
+            @endif
         </div>
         @php
             $profile = Auth::user()->id;
@@ -23,7 +26,8 @@
         <div class="opcionesContenedor">
             <h2>Opciones</h2>
             <form action="{{ route('edit.users', $profile) }}" method="POST">
-                <button type="submit" class="btn btn-primary botonTabla"><img src="{{asset('images\icons\add.png') }}" alt="icono añadir" class="iconos">Editar usuario</button>
+                @csrf
+                <button type="submit" class="btn btn-primary "><img src="{{asset('images\icons\add.png') }}" alt="icono añadir" class="iconos">Editar usuario</button>
             </form>
             <a class="btn btn-primary" href="{{ route('logout') }}" role="button"><img
                     src="{{ asset('images\icons\add.png') }}" alt="icono añadir" class="iconos">Cerrar sesión</a>
