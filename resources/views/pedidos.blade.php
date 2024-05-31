@@ -1,6 +1,9 @@
 @extends('master2')
 @section('title', 'Perfil')
 @section('index')
+<section class="titulos">
+    <h1>Pedidos</h1>
+</section>
     <section id="contenedorPedidos">
         <div id="topPedidos">
             <section class="tablaSectionPedidos">
