@@ -8,18 +8,18 @@
     margin: 0;
 }
 
-#contenedorIndex{
+.contenedorIndex{
     display:flex;
     align-items: center;
     flex-direction: column;
     margin: 40px 250px 40px 250px;
 }
 
-#contenedorIndex div{
+.contenedorIndex div{
     display:flex;
 }
 
-#contenedorIndex div button{
+.contenedorIndex div button{
     margin: 40px;
 }
 
@@ -35,4 +35,8 @@
 .parrafo{
     font-size: large;
     text-align: justify;
+}
+
+#esquema{
+    width: 800px;
 }

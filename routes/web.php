@@ -5,6 +5,7 @@ use App\Http\Controllers\LocalController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PedidosController;
 use Illuminate\Support\Facades\Route;
 
 //INDEX
@@ -13,7 +14,8 @@ Route::view('/','index')->name('inicio');
 //REGISTRO
 Route::view('/login', "login")->name('login');
 Route::view('/registro',"register")->name('registro');
-Route::view('/menu', "menu")/*->middleware('auth')*/->name('menu');
+Route::view('/menuAdministrador', "menu")/*->middleware('auth')*/->name('menu');
+Route::view('/menuAsalariado', "menu2")/*->middleware('auth')*/->name('menu2');
 
 //INFO
 Route::view('/cookies', "info.cookies")->name('cookies');
@@ -26,18 +28,46 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 //LOCAL
 Route::get('/local', [LocalController::class,'index'])->name('local.index');
+Route::post('local/{local}/edit', [LocalController::class,'edit'])->name('edit.local');
+Route::patch('local/{local?}', [LocalController::class,'update'])->name('update.local');
 
 //PRODUCT
-Route::get('/addProductos', [ProductController::class,'viewAdd'])->name('add.productos');
 Route::get('/allProductos', [ProductController::class,'index'])->name('all.productos');
-
-
+Route::get('/addProductos', [ProductController::class,'create'])->name('add.productos');
+Route::post('product/', [ProductController::class,'store'])->name('store.productos');
+Route::post('product/{product}/edit', [ProductController::class,'edit'])->name('edit.productos');
+Route::patch('product/{product?}', [ProductController::class,'update'])->name('update.productos');
 Route::delete('product/{product}', [ProductController::class,'destroy'])->name('product.destroy');
 
 //WAREHOUSE
 Route::get('/warehouse', [WarehouseController::class,'index'])->name('all.warehouse');
 Route::get('/addWarehouse', [WarehouseController::class,'viewAdd'])->name('add.warehouse');
+Route::post('warehouse/', [WarehouseController::class,'store'])->name('store.warehouse');
+Route::post('warehouse/{warehouse}/edit', [WarehouseController::class,'edit'])->name('edit.warehouse');
+Route::patch('warehouse/{warehouse?}', [WarehouseController::class,'update'])->name('update.warehouse');
+Route::delete('warehouse/{warehouse}', [WarehouseController::class,'destroy'])->name('destroy.warehouse');
 
 //USER
 Route::get('/users', [UserController::class,'index'])->name('all.users');
-Route::get('/addUsers', [UserController::class,'viewAdd'])->name('add.users');
+Route::get('/addUsers', [UserController::class,'create'])->name('add.users');
+Route::post('users/', [UserController::class,'store'])->name('store.users');
+Route::post('users/{user}/edit', [UserController::class,'edit'])->name('edit.users');
+Route::patch('users/{user?}', [UserController::class,'update'])->name('update.users');
+Route::delete('users/{user}', [UserController::class,'destroy'])->name('destroy.users');
+
+//PERFIL DE USUARIO
+Route::view('userProfile','user')->name('perfil');
+
+//PEDIDOS
+Route::get('Order',[PedidosController::class,'index'])->name('pedidos');
+Route::post('Order/{id}', [PedidosController::class,'add'])->name('add.pedidos');
+Route::post('Order/', [PedidosController::class,'reset'])->name('reset.pedidos');
+
+//MENU 2
+Route::get('/allPrdctsAsalariado', [ProductController::class,'index2'])->name('all.productosA');
+Route::get('/allWrhsAsalariado', [WarehouseController::class,'index2'])->name('all.warehouseA');
+Route::get('/localAsalariado', [LocalController::class,'index2'])->name('local.indexA');
+
+//PDF
+Route::get('/pdf/view',[PedidosController::class,'pdfview'])->name('pdf.view');
+Route::get('/pdf/download',[PedidosController::class,'pdfdownload'])->name('pdf.download');

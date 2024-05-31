@@ -1,5 +1,9 @@
-@extends('master')
+@extends('master2')
+@section('title', 'Almacenes')
 @section('index')
+    <section class="titulos">
+        <h1>Almacenes</h1>
+    </section>
     <section class="contenedorTablas">
         <section class="tablaSection">
             <table class='tabla table table-bordered table-hover'>
@@ -17,12 +21,12 @@
                         <td>{{ $warehouse->seccion }}</td>
                         <td>{{ $warehouse->nombre }}</td>
                         <td class='centrado'>
-                            <form action ="" method="POST">
+                            <form action ="{{route('edit.warehouse', $warehouse->id)}}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-primary botonTabla"><img
                                         src="{{ asset('images\icons\edit.png') }}" alt="icono borrar" class="iconos">Modificar</button>
                             </form>
-                            <form action ="" method="POST">
+                            <form action ="{{route('destroy.warehouse', $warehouse->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-primary botonTabla"><img

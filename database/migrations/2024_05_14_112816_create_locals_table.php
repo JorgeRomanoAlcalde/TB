@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('locals', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->string('ubicacion')->unique();
+            $table->string('telefono');
+            $table->string('horario');
             $table->timestamps();
         });
     }

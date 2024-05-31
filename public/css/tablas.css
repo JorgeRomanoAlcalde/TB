@@ -1,6 +1,13 @@
+/* TITULOS TABLAS*/
+.titulos{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
 /* TABLA */
 .contenedorTablas{
-    margin-top: 40px;
+    padding-top: 40px;
     min-height: 60vh;
     display: flex;
     flex-direction: row;
@@ -62,3 +69,18 @@ button.botonTabla{
     margin-right: 5px;
 
 }
+
+button.botonFormulario .iconos{
+    height: 25px;
+    padding-bottom: 3px;
+    margin-right: 5px;
+}
+
+.infoLocal{
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+

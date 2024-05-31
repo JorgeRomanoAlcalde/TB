@@ -16,10 +16,12 @@ class WarehouseTableSeeder extends Seeder
         //
         DB::table('warehouses')->insert([
             'seccion' => '1A',
+            'nombre' => 'Principal',
         ]);
 
         DB::table('warehouses')->insert([
             'seccion' => '2A',
+            'nombre' => 'Auxiliar',
         ]);
     }
 }

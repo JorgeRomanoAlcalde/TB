@@ -1,25 +1,43 @@
-@extends('master')
+@extends('master2')
 @section('index')
-<h1>MARIQUITA MARICONETE MARICON</h1>
 <section class="contenedorFormulario">
-    <div class="formulario">
-        <img src="{{ asset('images\iconBlue.png') }}" alt="TRACE BETTER Icon">
-        <h1>Inicie sesión</h1>
-        <form method="POST" action="{{ route('inicia-sesion') }}">
-            @csrf
-            <div class="form-group">
-              <label for="nickname">Nombre de usuario</label>
-              <input type="text" id="nickname" class="form-control" placeholder="Introduzca su nombre de usuario" required>
-            <div class="form-group" style="margin-bottom: 20px">
-              <label for="password">Contraseña</label>
-              <input type="password" id="password" class="form-control" placeholder="Introduzca su contraseña" required minlength="8">
-              <small id="emailHelp" class="form-text text-muted">La longitud minima es de 8 carácteres</small>
-            </div>
-            </div>
-            <button type="submit" class="btn btn-primary botonFormulario">Iniciar Sesión</button>
-            <p>¿No tiene cuenta? <a href="{{ route('registro') }}">Regístrese</a></p>
-          </form>
-    </div>
+  <div class="formulario">
+      @isset($local)
+      <h1>Edita almacen</h1>
+      @else
+      <h1>Añade almacenes</h1>
+      @endisset
+      @isset($local)
+          <br><br>
+          <form action="{{ route('update.local', ['local' => $local->id]) }}" method="POST">
+              @method('PATCH')
+          @else
+              <form action="{{ route('store.local') }}" method="POST">
+              @endisset
+              @csrf
+              <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" name="nombre" id="nombre" class="form-control"
+                      placeholder="Introduzca el nombre" required value="{{ $local->nombre ?? '' }}">
+                  <label for="ubicacion">Ubicación</label>
+                  <input type="text" name="ubicacion" id="ubicacion" class="form-control"
+                      placeholder="Introduzca la ubicación" value="{{ $local->ubicacion ?? '' }}">
+                  <br>
+                  <label for="telefono">Teléfono</label>
+                  <input type="text"  name="telefono" id="telefono" class="form-control" placeholder="Introduzca el telefono" required pattern="\+?\(?\d{2,4}\)?[\d\s-]{3,}" value="{{ $local->telefono ?? '' }}">
+                  <label for="horario">Horario</label>
+                  <input type="text" name="horario" id="horario" class="form-control"
+                      placeholder="Introduzca el horario" value="{{ $local->horario ?? '' }}">
+                  <br>
+              </div>
+              @isset($local)
+              <button type="submit" class="btn btn-primary botonFormulario"><img src="{{asset('images\icons\edit.png') }}" alt="icono editar" class="iconos">Modificar local</button>
+              @else
+              <button type="submit" class="btn btn-primary botonFormulario"><img src="{{asset('images\icons\add.png') }}" alt="icono añadir" class="iconos">Añadir almacen</button>
+              @endisset
+              <p><a href="{{ route('local.index') }}">Ver información del local</a></p>
+      </div>
+      </form>
+  </div>
 </section>
-    </section>
 @endsection

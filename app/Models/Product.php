@@ -12,8 +12,9 @@ class Product extends Model
     protected $fillable = [
         'nombre',
         'precio',
-        'descripción',
+        'descripcion',
         'cantidad',
+        'warehouse_id',
     ];
 
     public function warehouse() {

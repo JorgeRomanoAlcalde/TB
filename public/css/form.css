@@ -31,3 +31,12 @@ button.botonFormulario{
     height: 50px;
     width: 250px;
 }
+
+input.form-control{
+    margin-bottom: 15px;
+}
+
+button.botonEnlace{
+    width: 200px;
+    height: 40px;
+}

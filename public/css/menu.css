@@ -3,11 +3,29 @@
     padding: 0;
 }
 
-#informacionUsuario{
-    margin-left: 200px;
+.menuPrincipal{
+    min-height: 61vh;
 }
 
-.botones{
+#bienvenida{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    height: 155px;
+    background: rgb(231,231,231);
+    background: linear-gradient(180deg, rgba(231,231,231,1) 55%, rgba(255,255,255,1) 69%);
+}
+
+.informacionUsuario{
+    margin-left: 200px;
+    background-color:  rgb(231, 231, 231);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.botonMenu{
     padding: 20px;
     border: black 2px solid;
     width: 200px;
@@ -25,6 +43,8 @@
     display: flex;
     justify-content: space-between;
     margin-right: 200px;
+    padding-bottom: 50px;
+    align-items: center;
 }
 
 .parejasbotones{

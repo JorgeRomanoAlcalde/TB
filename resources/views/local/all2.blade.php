@@ -15,11 +15,7 @@
     <!-- MENU DE OPCIONES -->
     <div class="opcionesContenedor">
         <h2>Opciones</h2>
-        <form action="{{route('edit.local', $local->id)}}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-primary botonEnlace"><img src="{{asset('images\icons\edit.png') }}" alt="icono añadir" class="iconos">Editar local</button>
-        </form>
-        <a class="btn btn-primary" href="{{ route('menu') }}" role="button"><img
+        <a class="btn btn-primary" href="{{ route('menu2') }}" role="button"><img
                 src="{{ asset('images\icons\menu.png') }}" alt="icono menu" class="iconos">Menu principal</a>
     </div>
 </section>
