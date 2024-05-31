@@ -34,12 +34,20 @@
                             <td></td>
                             <td></td>
                         </tr>
+                    @endisset
                         <tr>
                             <td>TOTAL</td>
                             <td>€</td>
-                            <td></td>
+                            <td class="centrado">
+                                <form action ="{{route('reset.pedidos')}}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger botonTabla"><img
+                                        src="{{ asset('images\icons\delete.png') }}" alt="icono borrar"
+                                        class="iconos">Reset</button>
+                                </form>
+                            </td>
                         </tr>
-                    @endisset
+                    
                 </table>
             </section>
 

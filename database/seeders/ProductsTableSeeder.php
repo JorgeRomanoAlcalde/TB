@@ -70,5 +70,45 @@ class ProductsTableSeeder extends Seeder
             'warehouse' => '2A - Auxiliar',
         ]);
 
+        DB::table('products')->insert([
+            'nombre' => 'Pepsi',
+            'precio' => '1.75',
+            'descripcion' => 'Refresco de cola',
+            'cantidad' => '12',
+            'warehouse' => '2A - Auxiliar',
+        ]);
+
+        DB::table('products')->insert([
+            'nombre' => 'Fanta de Naranja',
+            'precio' => '2.50',
+            'descripcion' => 'Refresco de Naranja',
+            'cantidad' => '34',
+            'warehouse' => '2A - Auxiliar',
+        ]);
+
+        DB::table('products')->insert([
+            'nombre' => 'Fanta de Limón',
+            'precio' => '2.70',
+            'descripcion' => 'Refresco de limón',
+            'cantidad' => '30',
+            'warehouse' => '2A - Auxiliar',
+        ]);
+
+        DB::table('products')->insert([
+            'nombre' => 'Nestea',
+            'precio' => '3',
+            'descripcion' => 'Refresco de té',
+            'cantidad' => '5',
+            'warehouse' => '2A - Auxiliar',
+        ]);
+
+        DB::table('products')->insert([
+            'nombre' => 'Sprite',
+            'precio' => '2.75',
+            'descripcion' => 'Refresco sabor lima-limón',
+            'cantidad' => '22',
+            'warehouse' => '2A - Auxiliar',
+        ]);
+
     }
 }

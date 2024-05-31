@@ -23,6 +23,12 @@ class PedidosController extends Controller
         return view('pedidos', array('carrito' => $carrito),['productList'=>$productList]);
     }
 
+    public function reset() {
+        $productList = Product::all();
+        $carrito = array();
+        return view('pedidos', array('carrito' => $carrito),['productList'=>$productList]);
+    }
+
     public function pdfview(){
         $productList = Product::all();
         $pdf = Pdf::loadView('pdf', compact('productList'));

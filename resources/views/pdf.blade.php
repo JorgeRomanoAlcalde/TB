@@ -32,6 +32,7 @@
 <body>
     @php
     $fecha_y_hora = date("Y-m-d H:i:s");
+    $total = 0;
     @endphp
     <div class="ticket">
         <h1>La Taberna Del Blues</h1>
@@ -45,6 +46,7 @@
             </thead>
         </table>
         @foreach($productList as $producto)
+            @php $total+= $producto->precio @endphp
             <div class="items">
                 <div class="item">
                     <span>{{ $producto->nombre }}</span>
@@ -53,7 +55,7 @@
             </div>
         @endforeach
         <div class="total">
-            <p><strong>Total: 100 €</strong></p>
+            <p><strong>Total: @php echo $total @endphp €</strong></p>
         </div>
         <div class="footer">
             <p>¡Gracias por su compra!</p>

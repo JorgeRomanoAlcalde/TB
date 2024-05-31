@@ -61,6 +61,7 @@ Route::view('userProfile','user')->name('perfil');
 //PEDIDOS
 Route::get('Order',[PedidosController::class,'index'])->name('pedidos');
 Route::post('Order/{id}', [PedidosController::class,'add'])->name('add.pedidos');
+Route::post('Order/', [PedidosController::class,'reset'])->name('reset.pedidos');
 
 //MENU 2
 Route::get('/allPrdctsAsalariado', [ProductController::class,'index2'])->name('all.productosA');
