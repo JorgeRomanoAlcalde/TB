@@ -37,8 +37,9 @@ class PedidosController extends Controller
     public function pdfdownload(){
         $productList = Product::all();
         $pdf = Pdf::loadView('pdf', compact('productList'));
+        $fecha_y_hora = date("Y-m-d H:i:s");
         //return $pdf->stream();
-        return $pdf->download('_ticket.pdf');    
+        return $pdf->download($fecha_y_hora.'_ticket.pdf');    
 
         //$pdf = PDF::loadview('pdf',['productList'=>$productList]);
         //return $pdf->stream();
