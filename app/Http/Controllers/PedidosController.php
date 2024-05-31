@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PedidosController extends Controller
 {
@@ -11,15 +12,36 @@ class PedidosController extends Controller
 
     public function index() {
         $productList = Product::all();
-        $carrito = array();
-        return view('pedidos',['carrito'=>$carrito,'productList'=>$productList]);
+        return view('pedidos', ['productList'=>$productList]);
     }
 
-    public function add($id, $carrito) {
+    public function add($id) {
         $product = Product::find($id);
         $productList = Product::all();
-        $carrito= unserialize($carrito);
+        $carrito = array();
         array_push($carrito,$product);
-        return view('pedidos',['carrito'=>$carrito ,'productList'=>$productList]);
+        return view('pedidos', array('carrito' => $carrito),['productList'=>$productList]);
+    }
+
+    public function pdfview(){
+        $productList = Product::all();
+        $pdf = Pdf::loadView('pdf', compact('productList'));
+        return $pdf->stream();
+        //return $pdf->download('pdf');    
+
+        //$pdf = PDF::loadview('pdf',['productList'=>$productList]);
+        //return $pdf->stream();
+        //return view('pdf', array('producto' => $product));
+    }
+
+    public function pdfdownload(){
+        $productList = Product::all();
+        $pdf = Pdf::loadView('pdf', compact('productList'));
+        //return $pdf->stream();
+        return $pdf->download('_ticket.pdf');    
+
+        //$pdf = PDF::loadview('pdf',['productList'=>$productList]);
+        //return $pdf->stream();
+        //return view('pdf', array('producto' => $product));
     }
 }

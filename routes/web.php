@@ -59,4 +59,8 @@ Route::view('userProfile','user')->name('perfil');
 
 //PEDIDOS
 Route::get('Order',[PedidosController::class,'index'])->name('pedidos');
-Route::post('Order/{id}/{carrito}', [PedidosController::class,'add'])->name('add.pedidos');
+Route::post('Order/{id}', [PedidosController::class,'add'])->name('add.pedidos');
+
+//PDF
+Route::get('/pdf/view',[PedidosController::class,'pdfview'])->name('pdf.view');
+Route::get('/pdf/download',[PedidosController::class,'pdfdownload'])->name('pdf.download');

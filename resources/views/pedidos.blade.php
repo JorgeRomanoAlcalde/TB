@@ -46,10 +46,12 @@
             <!-- MENU DE OPCIONES -->
             <div class="opcionesContenedor">
                 <h2>Opciones</h2>
-                <a class="btn btn-primary" href="" role="button"><img src="{{ asset('images\icons\add.png') }}"
+                @isset($carrito)
+                <a class="btn btn-primary" href="{{route('pdf.view')}}" role="button"><img src="{{ asset('images\icons\ver.png') }}"
                         alt="icono añadir" class="iconos">Ver factura</a>
-                <a class="btn btn-primary" href="" role="button"><img src="{{ asset('images\icons\add.png') }}"
+                <a class="btn btn-primary" href="{{route('pdf.download')}}" role="button"><img src="{{ asset('images\icons\download.png') }}"
                         alt="icono añadir" class="iconos">Descargar factura</a>
+                @endisset
                 <a class="btn btn-primary" href="{{ route('menu') }}" role="button"><img
                         src="{{ asset('images\icons\menu.png') }}" alt="icono menu" class="iconos">Menu principal</a>
             </div>
@@ -63,15 +65,15 @@
             $contador = 0;
             @endphp
             
-            <table>
+            <table id="tablaPedidos">
             @isset($productList)
                 @for ($i = 0; $i < ceil($total_numeros / $columnas); $i++) 
                     <tr>
                     @foreach (range(1, $columnas) as $columna) 
                         @if ($contador < $total_numeros)
-                            <td><form  action="{{ route('add.pedidos', [$productList($contador), $carrito]) }}" method="POST">
+                            <td><form  action="{{ route('add.pedidos', $productList[$contador]->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-primary ">{{$productList[$contador]->nombre}}</button>
+                                <button type="submit" class="btn btn-primary botonPedidos">{{$productList[$contador]->nombre}}</button>
                             </form></td>
                             @php
                             $contador++;

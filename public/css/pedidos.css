@@ -6,6 +6,12 @@
     margin-top: 30px;
 }
 
+#bottomPedidos{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 40px 0;
+}
+
 .tablaSectionPedidos{
     width: 700px;
 }
@@ -13,4 +19,14 @@
 
 .tablaPedidos{
     width: 400px;
+}
+
+#tablaPedidos{
+    border: 3px solid lightgray;
+    border-collapse: collapse;
+}
+
+button.botonPedidos{
+    width: 200px;
+    margin: 20px;
 }
