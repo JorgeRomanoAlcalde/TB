@@ -12,6 +12,11 @@ class WarehouseController extends Controller
         return view('warehouse.all', ['warehouseList'=>$warehouseList]);
     }
 
+    public function index2() {
+        $warehouseList = Warehouse::all();
+        return view('warehouse.all2', ['warehouseList'=>$warehouseList]);
+    }
+
     public function viewAdd() {
         return view('warehouse.form');
     }

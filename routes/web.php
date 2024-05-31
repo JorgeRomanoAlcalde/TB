@@ -14,7 +14,8 @@ Route::view('/','index')->name('inicio');
 //REGISTRO
 Route::view('/login', "login")->name('login');
 Route::view('/registro',"register")->name('registro');
-Route::view('/menu', "menu")/*->middleware('auth')*/->name('menu');
+Route::view('/menuAdministrador', "menu")/*->middleware('auth')*/->name('menu');
+Route::view('/menuAsalariado', "menu2")/*->middleware('auth')*/->name('menu2');
 
 //INFO
 Route::view('/cookies', "info.cookies")->name('cookies');
@@ -60,6 +61,11 @@ Route::view('userProfile','user')->name('perfil');
 //PEDIDOS
 Route::get('Order',[PedidosController::class,'index'])->name('pedidos');
 Route::post('Order/{id}', [PedidosController::class,'add'])->name('add.pedidos');
+
+//MENU 2
+Route::get('/allPrdctsAsalariado', [ProductController::class,'index2'])->name('all.productosA');
+Route::get('/allWrhsAsalariado', [WarehouseController::class,'index2'])->name('all.warehouseA');
+Route::get('/localAsalariado', [LocalController::class,'index2'])->name('local.indexA');
 
 //PDF
 Route::get('/pdf/view',[PedidosController::class,'pdfview'])->name('pdf.view');

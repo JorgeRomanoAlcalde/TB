@@ -14,6 +14,11 @@ class ProductController extends Controller
         return view('product.all', ['productList'=>$productList]);
     }
 
+    public function index2() {
+        $productList = Product::all();
+        return view('product.all2', ['productList'=>$productList]);
+    }
+
     public function create() {
         $warehouses = Warehouse::all();
         return view('product.form', array('warehouses' => $warehouses));

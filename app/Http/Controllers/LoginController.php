@@ -39,7 +39,11 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
+            if($request->admin==0){
+                return redirect(route('menu2'));
+            }elseif($request->admin==1){
                 return redirect(route('menu'));
+            }
         //}else{
             //return redirect(route('login'));
         }

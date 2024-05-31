@@ -14,6 +14,12 @@ class LocalController extends Controller
         return view('local.all', ['local'=>$local]);
     }
 
+    public function index2() {
+        $id=1;
+        $local = Local::find($id);
+        return view('local.all2', ['local'=>$local]);
+    }
+
     public function edit($id) {
         $local = Local::find($id);
         return view('local.form', array('local' => $local));

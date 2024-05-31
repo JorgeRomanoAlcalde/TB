@@ -30,10 +30,13 @@
     </style>
 </head>
 <body>
+    @php
+    $fecha_y_hora = date("Y-m-d H:i:s");
+    @endphp
     <div class="ticket">
         <h1>La Taberna Del Blues</h1>
         <h2>Ticket de Compra</h2>
-        <p>Fecha: <span id="fecha"></span></p>
+        <p>Fecha: @php echo $fecha_y_hora;@endphp</span></p>
         <table class='tabla table table-bordered table-hover'>
             <thead>
                 <tr>
@@ -57,10 +60,5 @@
             <p>www.tracebetter.com</p>
         </div>
     </div>
-
-    <script>
-        // Script para mostrar la fecha actual
-        document.getElementById('fecha').innerText = new Date().toLocaleDateString();
-    </script>
 </body>
 </html>
