@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
 @section('index')
 <section class="titulos">
     <h1>Perfil del local</h1>

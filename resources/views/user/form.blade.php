@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
 @section('title', 'Añadir Usuarios')
 @section('index')
 <section class="contenedorFormulario">

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
 @section('index')
 <section class="contenedorFormulario">
   <div class="formulario">

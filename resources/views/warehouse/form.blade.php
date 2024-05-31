@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
 @section('title', 'Añadir almacenes')
 @section('index')
     <section class="contenedorFormulario">
@@ -30,7 +30,7 @@
                     @else
                     <button type="submit" class="btn btn-primary botonFormulario"><img src="{{asset('images\icons\add.png') }}" alt="icono añadir" class="iconos">Añadir almacen</button>
                     @endisset
-                    <p><a href="{{ route('all.productos') }}">Ver listado de productos</a></p>
+                    <p><a href="{{ route('all.warehouse') }}">Ver listado de almacenes</a></p>
             </div>
             </form>
         </div>

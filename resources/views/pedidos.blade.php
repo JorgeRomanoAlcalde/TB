@@ -73,7 +73,8 @@
                         @if ($contador < $total_numeros)
                             <td><form  action="{{ route('add.pedidos', $productList[$contador]->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-primary botonPedidos">{{$productList[$contador]->nombre}}</button>
+                                <button type="submit" class="btn btn-primary botonPedidos"><img
+                                    src="{{ asset('images\icons\beer.png') }}" alt="icono beer" class="iconos">{{$productList[$contador]->nombre}}</button>
                             </form></td>
                             @php
                             $contador++;
