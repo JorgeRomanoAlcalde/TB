@@ -29,6 +29,5 @@ git clone https://github.com/JorgeRomanoAlcalde/TB.git
 
 # Entrar al directorio del proyecto
 cd TB
-```bash
 
 
